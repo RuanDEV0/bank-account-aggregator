@@ -1,8 +1,8 @@
 export default {
 	dialect: 'postgres',
 	host: 'localhost',
-	username: 'postgres',
-	password: 'boot',
+	username: process.env.databaseUsername,
+	password: process.env.databasePassword,
 	database: 'open-finance',
 	define: {
 		timestamp: true,

@@ -7,6 +7,13 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "dotenvx run -- npx nodemon src/server.js",
 		"start": "dotenvx run -- node -r sucrase/register src/server.js",
+		"lint-staged": {
+			"**/*.{js,jsx,ts,tsx}": [
+				"eslint --fix",
+				"prettier --write"
+			  ],
+			  "**/*.{json,md}": ["prettier --write"]
+		},
 		"prepare": "husky install",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
