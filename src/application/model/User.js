@@ -5,20 +5,13 @@ class User extends Model {
 	static init(sequelize) {
 		super.init(
 			{
-				name: {
-					type: Sequelize.STRING,
-					allowNull: false,
-				},
-				email: {
-					type: Sequelize.STRING,
-					allowNull: false,
-					unique: true,
-				},
+				name: Sequelize.STRING,
+				email: Sequelize.STRING,
 				password: Sequelize.STRING,
+				cpf: Sequelize.STRING
 			},
 			{
-				sequelize,
-				tableName: 'users',
+				sequelize
 			}
 		);
 

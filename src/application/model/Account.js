@@ -4,17 +4,10 @@ class Account extends Model {
 	static init(sequelize) {
 		super.init(
 			{
-				numberAccount: {
-					type: Sequelize.STRING,
-					allowNull: false,
-					unique: true,
-				},
+				numberAccount: Sequelize.STRING,
 				balance: Sequelize.DECIMAL(15, 2),
 			},
-			{
-				sequelize,
-				tableName: 'accounts',
-			}
+			{ sequelize }
 		);
 
 		return this;

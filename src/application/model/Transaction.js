@@ -4,23 +4,12 @@ class Transaction extends Model {
 	static init(sequelize) {
 		super.init(
 			{
-				amount: {
-					type: Sequelize.DECIMAL(15, 2),
-					allowNull: false,
-				},
-				type: {
-					type: Sequelize.ENUM('credit', 'debit'),
-					allowNull: false,
-				},
-				description: Sequelize.TEXT,
-				date: {
-					type: Sequelize.DATE,
-					defaultValue: Sequelize.NOW,
-				},
+				amount: Sequelize.DECIMAL(15, 2),
+				type: Sequelize.ENUM('credit', 'debit'),
+				description: Sequelize.TEXT
 			},
 			{
-				sequelize,
-				tableName: 'transactions',
+				sequelize
 			}
 		);
 		return this;

@@ -4,29 +4,13 @@ class Institution extends Model {
 	static init(sequelize) {
 		super.init(
 			{
-				name: {
-					type: Sequelize.STRING,
-					allowNull: false,
-				},
-				cnpj: {
-					type: Sequelize.STRING,
-					allowNull: false,
-					unique: true,
-				},
-				email: {
-					type: Sequelize.STRING,
-					allowNull: false,
-					unique: true,
-				},
-				phone: {
-					type: Sequelize.SRING,
-					allowNull: false,
-					unique: true,
-				},
+				name: Sequelize.STRING,
+				cnpj: Sequelize.STRING,
+				email: Sequelize.STRING,
+				phone: Sequelize.STRING
 			},
 			{
-				sequelize,
-				tableName: 'institutions',
+				sequelize
 			}
 		);
 
