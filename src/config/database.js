@@ -9,7 +9,7 @@ export default {
 	password: `${process.env.databasePassword}`,
 	database: 'open-finance',
 	define: {
-		timestamp: true,
+		timestamps: true,
 		underscored: true,
 		underscoredAll: true,
 	}
