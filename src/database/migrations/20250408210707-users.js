@@ -4,10 +4,16 @@
 module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.createTable('users', {
+      id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true
+      },
       cpf: {
         type: Sequelize.STRING,
         allowNull: false,
-        primaryKey: true
+        unique: true
       },
       name: {
         type: Sequelize.STRING,
@@ -26,7 +32,7 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       },
-      update_at: {
+      updated_at: {
         type: Sequelize.DATE,
         allowNull: false
       }

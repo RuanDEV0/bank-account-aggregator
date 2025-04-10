@@ -1,3 +1,4 @@
+import './database/index';
 import app from './app';
 
 const PORT = process.env.PORTSERVER;

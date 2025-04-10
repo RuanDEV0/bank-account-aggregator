@@ -16,7 +16,7 @@ class Transaction extends Model {
 	}
 
 	static associate(models) {
-		this.belongsTo(models.ACCOUNT, { foreignKey: 'account_id', as: 'account' });
+		this.belongsTo(models.Account, { foreignKey: 'account_id', as: 'account' });
 	}
 }
 
