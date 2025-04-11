@@ -11,7 +11,7 @@ module.exports = {
         primaryKey: true
       },
       amount: {
-        type: Sequelize.DECIMAL(15,2),
+        type: Sequelize.FLOAT,
         allowNull: false
       },
       type: {
@@ -29,6 +29,10 @@ module.exports = {
       created_at: {
         type: Sequelize.DATE,
         allowNull: false
+      },
+      updated_at: {
+        type:Sequelize.DATE,
+        allowNull:false
       }
     });
   },

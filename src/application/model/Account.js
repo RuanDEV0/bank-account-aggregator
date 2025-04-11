@@ -4,8 +4,8 @@ class Account extends Model {
 	static init(sequelize) {
 		super.init(
 			{
-				numberAccount: Sequelize.STRING,
-				balance: Sequelize.DECIMAL(15, 2),
+				number_account: Sequelize.STRING,
+				balance: Sequelize.FLOAT,
 			},
 			{ sequelize }
 		);

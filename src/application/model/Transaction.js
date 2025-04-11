@@ -4,7 +4,7 @@ class Transaction extends Model {
 	static init(sequelize) {
 		super.init(
 			{
-				amount: Sequelize.DECIMAL(15, 2),
+				amount: Sequelize.FLOAT,
 				type: Sequelize.ENUM('credit', 'debit'),
 				description: Sequelize.TEXT
 			},

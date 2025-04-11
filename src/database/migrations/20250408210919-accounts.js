@@ -15,7 +15,7 @@ module.exports = {
         allowNull: false,
       },
       balance: {
-        type: Sequelize.DECIMAL(15,2),
+        type: Sequelize.FLOAT,
         defaultValue: 0
       },
       created_at: {
@@ -28,9 +28,9 @@ module.exports = {
       },
 
       user_id: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
-        references: {model: 'users', key: 'cpf'}
+        references: {model: 'users', key: 'id'}
       },
       institution_id: {
         type: Sequelize.INTEGER,

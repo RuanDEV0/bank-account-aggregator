@@ -1,0 +1,32 @@
+import Account from '../model/Account.js';
+import User from '../model/User.js';
+import Institution from '../model/Institution.js';
+
+const accounts = await Account.findAll({
+  include: [
+    { model: User, as: 'user', attributes: ['id', 'name', 'email'] },
+    { model: Institution, as: 'institution', attributes: ['id', 'name'] },
+  ],
+});
+
+
+
+
+
+import Transaction from '../model/Transaction.js';
+import Account from '../model/Account.js';
+import User from '../model/User.js';
+import Institution from '../model/Institution.js';
+
+const transactions = await Transaction.findAll({
+  include: [
+    {
+      model: Account,
+      as: 'account',
+      include: [
+        { model: User, as: 'user', attributes: ['id', 'name', 'email'] },
+        { model: Institution, as: 'institution', attributes: ['id', 'name'] }
+      ]
+    }
+  ]
+});

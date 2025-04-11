@@ -1,5 +1,6 @@
-import User from "../model/User";
 import { Op } from  'sequelize';
+
+import User from "../model/User";
 
 class UserValidate{
 
