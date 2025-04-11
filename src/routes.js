@@ -19,4 +19,6 @@ routes.get('/accounts', AccountController.index);
 routes.get('/users/:id/accounts', AccountController.show);
 
 routes.post('/users/:id/transactions', TransactionController.store)
+
+routes.get('/users/:id/balance', UserController.show);
 export default routes;

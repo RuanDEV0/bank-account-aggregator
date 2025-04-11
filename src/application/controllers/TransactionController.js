@@ -15,7 +15,7 @@ class TransactionController {
                 description
             });
     
-            return response.json(transactionSaved);
+            return response.send(transactionSaved);
 
         }catch(error){
             return response.status(400).json({error: error.message});

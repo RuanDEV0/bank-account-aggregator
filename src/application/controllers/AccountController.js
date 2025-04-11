@@ -4,7 +4,7 @@ class AccountController {
     async index(request, response){
         const accounts = accountService.findAll();
 
-        return response.json(accounts);
+        return response.send(accounts);
     }
 
     async store(request, response){
@@ -17,7 +17,7 @@ class AccountController {
             balance
         });
 
-        return response.json(accountSavedOrError);
+        return response.send(accountSavedOrError);
     }
 
     async show(request, response){
@@ -25,7 +25,7 @@ class AccountController {
         
         const accounts = await accountService.findById(user_id);
 
-        return response.json(accounts);
+        return response.send(accounts);
     }
 }
 

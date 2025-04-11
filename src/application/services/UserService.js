@@ -1,3 +1,4 @@
+import Account from '../model/Account';
 import User from '../model/User';
 import userValidate from '../validation/UserValidate';
 
@@ -41,6 +42,27 @@ class UserService{
         const { name, email, cpf } = await user.save();
 
         return {name, email, cpf};
+    }
+
+    async totalBalance(user_id){
+        const accounts = await Account.findAll({where: {
+            user_id
+        }})
+
+        if(!accounts){
+            throw new Error('not exists account this user');
+        }
+
+        const balances = accounts.map(account => account.balance);
+        const totalBalance = balances.reduce((acc, balance) => acc + balance, 0);
+        
+        const {name, cpf } = await User.findByPk(user_id);
+
+        return {
+            name,
+            cpf,
+            totalBalance
+        }
     }
 }
 

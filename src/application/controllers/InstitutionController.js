@@ -4,7 +4,7 @@ import InstitutionService from "../services/InstitutionService";
 class InstitutionController {
     async index(request, response){
         const institutions = await InstitutionService.findAll();
-        return response.json(institutions);
+        return response.send(institutions);
     }
 
     async store(request, response){
@@ -17,7 +17,7 @@ class InstitutionController {
             email
         })
 
-        return response.json(institutionSavedOrError);
+        return response.send(institutionSavedOrError);
     }
 }
 
