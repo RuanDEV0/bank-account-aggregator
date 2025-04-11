@@ -15,10 +15,9 @@ class AccountValidate {
         return !accountExists ? false : true;
     }
 
-    async existsAccountByUser(id, user_id){
+    async existsAccountByUser(user_id){
         const accountExists = await Account.findOne({
             where: {
-                id,
                 user_id
             }
         });

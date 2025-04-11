@@ -5,9 +5,9 @@ import Institution from "../model/Institution"
 class InstitutionValidate {
 
     async existsById(id){
-        const user = await Institution.findByPk(id);
+        const institution = await Institution.findByPk(id);
 
-        return !user ? false : true;
+        return !institution ? false : true;
     }
     
     async isValid(body){
@@ -24,6 +24,16 @@ class InstitutionValidate {
         });
 
         return !institution ? true : false;
+    }
+
+    async existsByName(name){
+        const institution = await Institution.findOne({
+            where: {
+                name
+            }
+        });
+
+        return !institution ? false : true;
     }
 }
 

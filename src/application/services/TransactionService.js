@@ -6,7 +6,7 @@ import TransactionValidate from '../validation/TransactionValidate';
 class TransactionService {
     async save(data){
 
-        if(!(await AccountValidate.existsAccountByUser(data.account_id, data.user_id))){
+        if(!(await AccountValidate.existsAccountByUser(data.user_id))){
             throw new Error('account does not exists for this user!');
         }
 

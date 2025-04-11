@@ -23,10 +23,18 @@ class UserController{
 
     async show(request, response){
         const { id } = request.params;
+        const { institution } = request.query;
 
-        try{
-            const data = await userService.totalBalance(id);
+        try{ 
+
+            if(!institution){
+                const data = await userService.totalBalance(id, institution);
+                return response.send(data); 
+            }
+
+            const data = await userService.totalBalanceByInstitution(id, institution);
             return response.send(data);
+            
         }catch(error){
             return response.status(400).json({error: error.message});
         }

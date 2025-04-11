@@ -1,6 +1,9 @@
 import Account from '../model/Account';
 import User from '../model/User';
 import userValidate from '../validation/UserValidate';
+import institutionValidate from '../validation/InstitutionValidate';
+import Institution from '../model/Institution';
+import AccountValidate from '../validation/AccountValidate';
 
 class UserService{
 
@@ -45,9 +48,41 @@ class UserService{
     }
 
     async totalBalance(user_id){
+
+        if(!(await AccountValidate.existsAccountByUser(user_id))){
+            throw new Error('not exists account this user');
+        }
+
         const accounts = await Account.findAll({where: {
             user_id
         }})
+
+        const balances = accounts.map(account => account.balance);
+        const totalBalance = balances.reduce((acc, balance) => acc + balance, 0);
+        
+        const {name, cpf } = await User.findByPk(user_id);
+
+        return {
+            name,
+            cpf,
+            totalBalance
+        }
+    }
+
+    async totalBalanceByInstitution(user_id, institution){
+
+        if(!(await institutionValidate.existsByName(institution))){
+            throw new Error('Institution not exits!');
+        }
+
+        const institutionSaved = await Institution.findOne({where:{name:institution}});
+
+        const accounts = await Account.findAll({
+            where: {
+                user_id,
+                institution_id: institutionSaved.id
+            }
+        });
 
         if(!accounts){
             throw new Error('not exists account this user');
@@ -63,6 +98,8 @@ class UserService{
             cpf,
             totalBalance
         }
+
+
     }
 }
 
