@@ -1,0 +1,31 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:15
+    container_name: openfinance_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: open-finance
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: openfinance_app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      databaseUsername: postgres
+      databasePassword: postgres
+    volumes:
+      - .:/usr/src/app
+    command: sh -c "npx sequelize-cli db:migrate && npm run dev"
+
+volumes:
+  pgdata:
