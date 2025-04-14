@@ -4,6 +4,7 @@ import userValidate from '../validation/UserValidate';
 import institutionValidate from '../validation/InstitutionValidate';
 import Institution from '../model/Institution';
 import AccountValidate from '../validation/AccountValidate';
+import Transaction from '../model/Transaction';
 
 class UserService{
 
@@ -100,6 +101,56 @@ class UserService{
         }
 
 
+    }
+
+    async findTransactions(user_id){
+        if(!(await AccountValidate.existsAccountByUser(user_id))){
+            throw new Error('not exists account this user');
+        }
+
+        const transactions = await Transaction.findAll({
+            include: {
+                model: Account,
+                as: 'account',
+                where: {
+                    user_id
+                },
+                attributes: ['institution_id', 'number_account']
+            }
+        });
+
+        return transactions;
+    }
+
+    async findTransactionsByInstitution(user_id, nameInstitution){
+        if(!(await institutionValidate.existsByName(nameInstitution))){
+            throw new Error('not exits this institution');
+        }
+
+        if(!(await AccountValidate.existsAccountByUser(user_id))){
+            throw new Error('not exists account this user!');
+        }
+
+        const { id: institution_id } = await Institution.findOne({
+            where: {
+                name: nameInstitution
+            }
+        });
+
+
+        const transactions = await Transaction.findAll({
+            include: {
+                model: Account,
+                as: 'account',
+                where: {
+                    user_id,
+                    institution_id
+                },
+                attributes: ['institution_id', 'number_account']
+            }
+        });
+
+        return transactions;
     }
 }
 

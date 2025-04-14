@@ -39,6 +39,26 @@ class UserController{
             return response.status(400).json({error: error.message});
         }
     }
+
+    async showStatement(request, response){
+        const { id } = request.params;
+        const { institution } = request.query;
+
+        try{
+
+            if(!institution){
+                const transactions = await userService.findTransactions(id);
+                return response.send(transactions);
+            }
+
+            const transactions = await userService.findTransactionsByInstitution(id, institution);
+
+            return response.send(transactions);
+
+        }catch(error){
+            return response.status(400).json({error: error.message});
+        }
+    }
 }
 
 export default new UserController();
