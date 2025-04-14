@@ -43,16 +43,26 @@ class UserController{
     async showStatement(request, response){
         const { id } = request.params;
         const { institution } = request.query;
+        const { type } = request.query;
 
         try{
 
-            if(!institution){
+            if(!institution && !type){
                 const transactions = await userService.findTransactions(id);
                 return response.send(transactions);
             }
 
-            const transactions = await userService.findTransactionsByInstitution(id, institution);
+            if(!type && institution){
+                const transactions = await userService.findTransactionsByInstitution(id, institution);
+                return response.send(transactions);
+            }
 
+            if(type && !institution){
+                const transactions = await userService.findTransactionsByType(id, type);
+                return response.send(transactions);
+            }
+
+            const transactions = await userService.findTransactionsByInstitutionAndType(id, institution, type);
             return response.send(transactions);
 
         }catch(error){

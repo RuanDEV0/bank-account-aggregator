@@ -152,6 +152,53 @@ class UserService{
 
         return transactions;
     }
+
+    async findTransactionsByType(user_id, type){
+
+        if(!(await AccountValidate.existsAccountByUser(user_id))){
+            throw new Error('not exists account this user!');
+        }
+
+        const transactions = await Transaction.findAll({
+            where: { type }
+        });
+
+        return transactions;
+    }
+
+    async findTransactionsByInstitutionAndType(user_id, nameInstitution, type){
+        if(!(await institutionValidate.existsByName(nameInstitution))){
+            throw new Error('not exits this institution');
+        }
+
+        if(!(await AccountValidate.existsAccountByUser(user_id))){
+            throw new Error('not exists account this user!');
+        }
+
+        const { id: institution_id } = await Institution.findOne({
+            where: {
+                name: nameInstitution
+            }
+        });
+
+
+        const transactions = await Transaction.findAll({
+            where: {
+                type
+            },
+            include: {
+                model: Account,
+                as: 'account',
+                where: {
+                    user_id,
+                    institution_id
+                },
+                attributes: ['institution_id', 'number_account']
+            }
+        });
+
+        return transactions;
+    }
 }
 
 export default new UserService();
