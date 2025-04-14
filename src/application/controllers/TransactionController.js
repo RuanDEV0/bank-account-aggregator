@@ -1,4 +1,4 @@
-import TransactionService from '../services/TransactionService';
+import TransactionService from '../services/TransactionService.js';
 
 class TransactionController {
     async store(request, response){

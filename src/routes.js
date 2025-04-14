@@ -1,17 +1,17 @@
 import { Router } from 'express';
 
 const routes = new Router();
-import authentication from './application/middlewares/authentication';
-import UserController from './application/controllers/UserController';
-import InstitutionController from './application/controllers/InstitutionController';
-import AccountController from './application/controllers/AccountController';
-import TransactionController from './application/controllers/TransactionController';
-import SessionController from './application/controllers/SessionController';
-import ValidateUserInput from './application/middlewares/ValidateUserInput';
-import ValidateTransactionInput from './application/middlewares/ValidateTransactionInput';
-import ValidateSessionInput from './application/middlewares/ValidateSessionInput';
-import ValidateAccountInput from './application/middlewares/ValidateAccountInput';
-import ValidateInstitutionInput from './application/middlewares/ValidateInstitutionInput';
+import authentication from './application/middlewares/authentication.js';
+import UserController from './application/controllers/UserController.js';
+import InstitutionController from './application/controllers/InstitutionController.js';
+import AccountController from './application/controllers/AccountController.js';
+import TransactionController from './application/controllers/TransactionController.js';
+import SessionController from './application/controllers/SessionController.js';
+import ValidateUserInput from './application/middlewares/ValidateUserInput.js';
+import ValidateTransactionInput from './application/middlewares/ValidateTransactionInput.js';
+import ValidateSessionInput from './application/middlewares/ValidateSessionInput.js';
+import ValidateAccountInput from './application/middlewares/ValidateAccountInput.js';
+import ValidateInstitutionInput from './application/middlewares/ValidateInstitutionInput.js';
 
 routes.get('/users', UserController.index)
 routes.post('/users', ValidateUserInput.validateBodyPost,UserController.store);

@@ -1,6 +1,6 @@
 
-import Institution from '../model/Institution';
-import institutionValidate from '../validation/InstitutionValidate';
+import Institution from '../model/Institution.js';
+import institutionValidate from '../validation/InstitutionValidate.js';
 
 class InstitutionService {
     async findAll(){

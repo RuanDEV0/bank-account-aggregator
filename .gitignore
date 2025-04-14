@@ -2,7 +2,3 @@ node_modules
 .env
 *.txt
 
-src/config/database.js
-src/config/authenticationConfig.js
-.sequelizerc
-

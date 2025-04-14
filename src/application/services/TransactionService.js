@@ -1,7 +1,7 @@
-import Account from '../model/Account';
-import Transaction from '../model/Transaction';
-import AccountValidate from '../validation/AccountValidate';
-import TransactionValidate from '../validation/TransactionValidate';
+import Account from '../model/Account.js';
+import Transaction from '../model/Transaction.js';
+import AccountValidate from '../validation/AccountValidate.js';
+import TransactionValidate from '../validation/TransactionValidate.js';
 
 class TransactionService {
     async save(data){

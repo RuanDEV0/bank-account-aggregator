@@ -1,6 +1,6 @@
 import { Op } from "sequelize";
 
-import Institution from "../model/Institution"
+import Institution from '../model/Institution.js';
 
 class InstitutionValidate {
 

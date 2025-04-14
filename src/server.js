@@ -1,5 +1,5 @@
-import './database/index';
-import app from './app';
+import './database/index.js';
+import app from './app.js';
 
 const PORT = process.env.PORTSERVER;
 

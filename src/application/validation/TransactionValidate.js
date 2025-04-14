@@ -1,4 +1,4 @@
-import Account from "../model/Account";
+import Account from "../model/Account.js";
 
 class TransactionValidate {
     async isValidBalance(account_id, amount){

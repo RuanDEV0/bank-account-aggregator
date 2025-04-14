@@ -1,5 +1,5 @@
 
-import Account from '../model/Account';
+import Account from '../model/Account.js';
 
 class AccountValidate {
     async existsAccountByInstitution(user_id, number_account, institution_id){

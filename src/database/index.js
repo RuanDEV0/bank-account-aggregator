@@ -1,9 +1,9 @@
 import { Sequelize } from 'sequelize';
-import databaseConfig from '../config/database';
-import User from '../application/model/User';
-import Transaction from '../application/model/Transaction';
-import Institution from '../application/model/Institution';
-import Account from '../application/model/Account';
+import databaseConfig from '../config/database.js';
+import User from '../application/model/User.js';
+import Transaction from '../application/model/Transaction.js';
+import Institution from '../application/model/Institution.js';
+import Account from '../application/model/Account.js';
 
 const models = [User, Transaction, Institution, Account];
 class Database {

@@ -1,22 +1,32 @@
 'use strict';
 
 /** @type {import('sequelize-cli').Migration} */
-module.exports = {
+export default {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('accounts', { 
+    await queryInterface.createTable('users', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primaryKey: true
       },
-      number_account: {
+      cpf: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true
       },
-      balance: {
-        type: Sequelize.FLOAT,
-        defaultValue: 0
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      }, 
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+      }, 
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       created_at: {
         type: Sequelize.DATE,
@@ -25,22 +35,12 @@ module.exports = {
       updated_at: {
         type: Sequelize.DATE,
         allowNull: false
-      },
-
-      user_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {model: 'users', key: 'id'}
-      },
-      institution_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {model: 'institutions', key: 'id'}
       }
+
     });
   },
 
   async down (queryInterface) {
-    await queryInterface.dropTable('accounts');
+    await queryInterface.dropTable('users');
   }
 };

@@ -1,8 +1,8 @@
 
-import Account from "../model/Account";
-import accountValidate from "../validation/AccountValidate";
-import userValidate from "../validation/UserValidate";
-import institutionValidate from "../validation/InstitutionValidate";
+import Account from "../model/Account.js";
+import accountValidate from "../validation/AccountValidate.js";
+import userValidate from "../validation/UserValidate.js";
+import institutionValidate from "../validation/InstitutionValidate.js";
 
 class AccountService {
 
@@ -18,7 +18,7 @@ class AccountService {
         const user_id = parseInt(data.user_id);
 
         if(!(await userValidate.existsUserById(user_id))){
-            return {error: 'user not exists'};
+            throw new Error('user not exists');
         }
 
         if(!(await institutionValidate.existsById(institution_id))){
@@ -26,7 +26,7 @@ class AccountService {
         }
 
         if(await accountValidate.existsAccountByInstitution(user_id, number_account, institution_id)){
-            return {error: 'Exists account this institution'};
+            throw new Error('Exists account this institution');
         }
         const account = {
             balance: data.balance,

@@ -1,5 +1,5 @@
 
-import InstitutionService from "../services/InstitutionService";
+import InstitutionService from "../services/InstitutionService.js";
 
 class InstitutionController {
     async index(request, response){

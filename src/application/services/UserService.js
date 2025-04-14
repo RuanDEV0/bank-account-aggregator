@@ -1,10 +1,10 @@
-import Account from '../model/Account';
-import User from '../model/User';
-import userValidate from '../validation/UserValidate';
-import institutionValidate from '../validation/InstitutionValidate';
-import Institution from '../model/Institution';
-import AccountValidate from '../validation/AccountValidate';
-import Transaction from '../model/Transaction';
+import Account from '../model/Account.js';
+import User from '../model/User.js';
+import userValidate from '../validation/UserValidate.js';
+import institutionValidate from '../validation/InstitutionValidate.js';
+import Institution from '../model/Institution.js';
+import AccountValidate from '../validation/AccountValidate.js';
+import Transaction from '../model/Transaction.js';
 
 class UserService{
 
