@@ -19,12 +19,12 @@ services:
     depends_on:
       - db
     environment:
-      DB_USERNAME: ${DB_USERNAME} 
-      DB_PASSWORD: ${DB_PASSWORD} 
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
-    command: sh -c "npx sequelize-cli db:migrate && npm run dev"
+    command: sh -c "/wait-for db:5432 -- npx sequelize-cli db:migrate && npm run dev"
 
 volumes:
   pgdata:
