@@ -23,6 +23,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD} 
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
     command: sh -c "npx sequelize-cli db:migrate && npm run dev"
 
 volumes:
