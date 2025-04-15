@@ -9,4 +9,4 @@ COPY . .
 
 EXPOSE 3333
 
-CMD npm install && npx sequelize-cli db:migrate && npm run dev
+CMD npm run dev
