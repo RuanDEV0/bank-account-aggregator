@@ -2,9 +2,9 @@
 export default {
 	dialect: 'postgres',
 	host: 'db',
-	username: process.env.databaseUsername,
-	password: process.env.databasePassword,
-	database: 'open-finance',
+	username: process.env.DB_USERNAME,
+	password: process.env.DB_PASSWORD,
+	database: process.env.POSTGRES_DB,
 	define: {
 		timestamps: true,
 		underscored: true,
