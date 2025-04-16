@@ -1,10 +1,10 @@
 
-export default {
+export default{
 	dialect: 'postgres',
-	host: 'db',
+	host: process.env.DB_HOST,
 	username: process.env.DB_USERNAME,
 	password: process.env.DB_PASSWORD,
-	database: process.env.POSTGRES_DB,
+	database: process.env.DB_NAME,
 	define: {
 		timestamps: true,
 		underscored: true,

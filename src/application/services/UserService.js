@@ -9,7 +9,9 @@ import Transaction from '../model/Transaction.js';
 class UserService{
 
     async findAll(){
-        return await User.findAll();
+        return await User.findAll({
+            attributes: ['id', 'name', 'email', 'cpf']
+        });
     }
 
     async save(data){

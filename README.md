@@ -51,7 +51,8 @@ Antes de rodar a aplicação, verifique se você tem as seguintes ferramentas in
   Isso irá construir as imagens necessárias e subir os containers para o banco de dados e para a aplicação.
 
 2. Acessar a aplicação:
-Após os containers estarem rodando, você pode acessar a aplicação no navegador ou em ferramentas como o [Postman](https://www.postman.com/downloads/), utilizando a URL `http://localhost:3333`.
+   
+- Após os containers estarem rodando, você pode acessar a aplicação no navegador ou em ferramentas como o [Postman](https://www.postman.com/downloads/), utilizando a URL `http://localhost:XXXX`. Onde o XXXX, é a porta configurada para a variavel PORTSERVER.
 
 ## Recursos de cada Rota
 

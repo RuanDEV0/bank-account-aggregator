@@ -19,13 +19,17 @@ services:
     depends_on:
       - db
     environment:
-      PORTSERVER: ${PORTSERVER}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      PORTSERVER: ${PORTSERVER}
+
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
-    command: sh -c "/wait-for db:5432 -- npx sequelize-cli db:migrate && npm run dev"
+    command: sh -c "/wait-for db:5432 -t 60 -- echo 'Banco disponível!' && npx sequelize-cli db:migrate && npm run dev"
 
 volumes:
   pgdata:
