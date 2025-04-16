@@ -91,7 +91,7 @@ Na pasta do projeto no terminal, executar:
 # **📡 Recursos da API**
 
 ## 🔒 Autenticação
-- Formato para Método *POST '/users'*
+- Formato para Método *POST '/sessions'*
   ```json
   {
     "email": "testando@gmail.com",
