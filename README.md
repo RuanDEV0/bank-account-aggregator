@@ -90,6 +90,23 @@ Na pasta do projeto no terminal, executar:
 
 # **📡 Recursos da API**
 
+## 🔒 Autenticação
+- Formato para Método *POST '/users'*
+  ```json
+  {
+    "email": "testando@gmail.com",
+    "password": "testando@gmail.com"
+  }
+- Resposta:
+  ```json
+  {
+    "user": { 
+      "id": 1, 
+      "name": 
+      "Fulano" 
+      },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+  }
 ## 👥 Usuários
 
 | Método | Endpoint               | Descrição                  | Parâmetros                     | Autenticação |
@@ -104,10 +121,10 @@ Na pasta do projeto no terminal, executar:
   - Body:
      ```json
     {
-      'name': 'test',
-      'email': 'test@gmail.com',
-      'password': 'testando',
-      'cpf': 1234567891
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "testando",
+      "cpf": 1234567891
     }
 ## 🏦 Instituições
 
@@ -120,10 +137,10 @@ Na pasta do projeto no terminal, executar:
   - Body:
      ```json
     {
-      'name': 'Banco',
-      'email': 'Bacno@gmail.com',
-      'cnpj': '12345600',
-      'phone': 55-9999999
+      "name": "Banco",
+      "email": "Banco@gmail.com",
+      "cnpj": "12345600",
+      "phone": "55-9999999"
     }
 ## 💳 Contas Bancárias
 
@@ -137,8 +154,8 @@ Na pasta do projeto no terminal, executar:
   - Body:
      ```json
     {
-      'institution_id': 1,
-      'balance': 2500
+      "institution_id": 1,
+      "balance": 2500
     }
 
 ## 💸 Transações
@@ -155,10 +172,10 @@ Na pasta do projeto no terminal, executar:
   - Body:
      ```json
     {
-      'account_id': 1,
-      'amount': 500,
-      'type': 'debit',
-      'description': 'Pagar Conta De Algo'
+      "account_id": 1,
+      "amount": 500,
+      "type": "debit",
+      "description": "Pagar Conta De Algo"
     }
  # **🧹 Finalizando a API**
    - Parar os containers:
