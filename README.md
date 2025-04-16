@@ -10,7 +10,6 @@ Aplicação Node.js com PostgreSQL para agregação de contas bancárias e trans
 
 - [Git](https://git-scm.com/downloads)
 - [Docker](https://www.docker.com/get-started/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ---
 
