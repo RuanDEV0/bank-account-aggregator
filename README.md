@@ -95,7 +95,7 @@ Na pasta do projeto no terminal, executar:
   ```json
   {
     "email": "testando@gmail.com",
-    "password": "testando@gmail.com"
+    "password": "testando"
   }
 - Resposta:
   ```json
