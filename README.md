@@ -39,7 +39,7 @@ Aplicação Node.js com PostgreSQL para agregação de contas bancárias e trans
 
     # Porta do servidor da API
 
-    PORTSERVER=XXXX
+    PORTSERVER=3333
 
     # Token de autenticação JWT (use um hash MD5 aleatório)
 
