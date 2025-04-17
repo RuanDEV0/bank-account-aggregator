@@ -1,5 +1,7 @@
 import { Op } from  'sequelize';
 
+/* [Op.or] module para verificar se existe um usuário com email ou cpf já cadastrado */
+
 import User from "../model/User.js";
 
 class UserValidate{

@@ -1,5 +1,8 @@
 import { Op } from "sequelize";
 
+/* [Op.or] module encontrado para verificar se existe uma instituição com algum atributo iqual,
+   já que todos os atributos são únicos */
+
 import Institution from '../model/Institution.js';
 
 class InstitutionValidate {
@@ -11,7 +14,6 @@ class InstitutionValidate {
     }
     
     async isValid(body){
-
         const institution = await Institution.findOne({
             where: {
                 [Op.or]: [
