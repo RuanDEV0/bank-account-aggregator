@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 class ValidateUserInput {
     async validateBodyPost(request, response, next){
         const schema = Yup.object().shape({
-            cpf: Yup.string().required(),
+            cpf: Yup.string().strict().required(),
             name: Yup.string().required().min(3),
             email: Yup.string().email().required(),
             password: Yup.string().min(6).required()

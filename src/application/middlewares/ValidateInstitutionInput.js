@@ -4,8 +4,8 @@ class ValidateInstitutinoInput {
     async validateBodyPost(request, response, next){
         const schema = Yup.object().shape({
             name: Yup.string().required().min(2),
-            phone: Yup.string().required(),
-            cnpj: Yup.string().required(),
+            phone: Yup.string().strict().required(),
+            cnpj: Yup.string().strict().required(),
             email: Yup.string().email().required()
         });
 

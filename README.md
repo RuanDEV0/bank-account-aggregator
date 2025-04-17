@@ -94,7 +94,7 @@ Na pasta do projeto no terminal, executar:
 - Formato para Método *POST '/sessions'*
   ```json
   {
-    "email": "testando@gmail.com",
+    "email": "test@gmail.com",
     "password": "testando"
   }
 - Resposta:
@@ -124,7 +124,7 @@ Na pasta do projeto no terminal, executar:
       "name": "test",
       "email": "test@gmail.com",
       "password": "testando",
-      "cpf": 1234567891
+      "cpf": "1234567891"
     }
 ## 🏦 Instituições
 
