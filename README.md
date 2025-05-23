@@ -89,8 +89,6 @@ Na pasta do projeto no terminal, executar:
     docker compose down -v
 
 # **📡 Recursos da API**
-
-- Link com a estrutura da [Collection](https://api.postman.com/collections/41625835-adfef074-c108-4f08-9af2-4b4d4a9d81c6?access_key=PMAT-01JSEWGQD3J8BXVYW9CBHRD6G8) com as requisições  para importar para o POSTMAN, **só ajustando o caminho com a rota especificada no PORTSERVER**.
   
 ## 🔒 Autenticação
 - Formato para Método *POST '/sessions'*
