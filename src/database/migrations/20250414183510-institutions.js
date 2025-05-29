@@ -19,6 +19,10 @@ export default {
         unique: true,
         allowNull: false
       }, 
+      image: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       phone: {
         type: Sequelize.STRING,
         allowNull: false,

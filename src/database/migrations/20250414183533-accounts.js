@@ -14,6 +14,10 @@ export default {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      agency: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
       balance: {
         type: Sequelize.FLOAT,
         defaultValue: 0

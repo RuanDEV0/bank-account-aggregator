@@ -4,8 +4,10 @@ import User from '../application/model/User.js';
 import Transaction from '../application/model/Transaction.js';
 import Institution from '../application/model/Institution.js';
 import Account from '../application/model/Account.js';
+import Consent from '../application/model/Consent.js';
+import TransactionOpenFinance from '../application/model/TransactionOpenFinance.js';
 
-const models = [User, Transaction, Institution, Account];
+const models = [User, Transaction, Institution, Account, Consent, TransactionOpenFinance];
 class Database {
 	constructor() {
 		this.init();
