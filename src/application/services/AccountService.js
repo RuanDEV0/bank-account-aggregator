@@ -3,6 +3,7 @@ import Account from "../model/Account.js";
 import accountValidate from "../validation/AccountValidate.js";
 import userValidate from "../validation/UserValidate.js";
 import institutionValidate from "../validation/InstitutionValidate.js";
+import GenerateValues from '../util/GenerateValues.js';
 
 class AccountService {
 
@@ -13,12 +14,17 @@ class AccountService {
 
     async save(data){
 
-        const number_account = (Math.floor(100000 + Math.random() * 900000)).toString();
+        const number_account = (Math.floor(10000000 + Math.random() * 90000000)).toString();
+        const agency = GenerateValues.generateAgencyNumber();
         const institution_id = data.institution_id;
         const user_id = parseInt(data.user_id);
 
         if(!(await userValidate.existsUserById(user_id))){
             throw new Error('user not exists');
+        }
+
+        if(await accountValidate.existsAccountByUser(user_id)){
+            throw new Error('exists account this user');
         }
 
         if(!(await institutionValidate.existsById(institution_id))){
@@ -32,7 +38,8 @@ class AccountService {
             balance: data.balance,
             user_id,
             institution_id,
-            number_account
+            number_account,
+            agency
         }
         console.log(account);
 
