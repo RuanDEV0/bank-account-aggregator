@@ -12,6 +12,8 @@ import ValidateTransactionInput from './application/middlewares/ValidateTransact
 import ValidateSessionInput from './application/middlewares/ValidateSessionInput.js';
 import ValidateAccountInput from './application/middlewares/ValidateAccountInput.js';
 import ValidateInstitutionInput from './application/middlewares/ValidateInstitutionInput.js';
+import OpenFinanceController from './application/controllers/OpenFinanceController.js';
+import ValidateAction from './application/middlewares/ValidateAction.js';
 
 routes.get('/users', UserController.index)
 routes.post('/users', ValidateUserInput.validateBodyPost,UserController.store);
@@ -19,6 +21,11 @@ routes.post('/sessions', ValidateSessionInput.validateBodyPost, SessionControlle
 
 routes.get('/institutions', InstitutionController.index);
 routes.post('/institutions', ValidateInstitutionInput.validateBodyPost, InstitutionController.store);
+
+routes.post('/openfinance', OpenFinanceController.saveConsent);
+routes.patch('/openfinance/:action', ValidateAction.checkAction, OpenFinanceController.replaceConsent);
+routes.get('/openfinance', OpenFinanceController.getBalance);
+routes.post('/openfinance/transaction', OpenFinanceController.saveTransaction);
 
 routes.use(authentication);
 routes.put('/users/:id', ValidateUserInput.validateBodyPut, UserController.update)
