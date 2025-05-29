@@ -6,6 +6,7 @@ class Institution extends Model {
 			{
 				name: Sequelize.STRING,
 				cnpj: Sequelize.STRING,
+				image: Sequelize.STRING,
 				email: Sequelize.STRING,
 				phone: Sequelize.STRING
 			},

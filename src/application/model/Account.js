@@ -6,6 +6,7 @@ class Account extends Model {
 			{
 				number_account: Sequelize.STRING,
 				balance: Sequelize.FLOAT,
+				agency: Sequelize.STRING
 			},
 			{ sequelize }
 		);
