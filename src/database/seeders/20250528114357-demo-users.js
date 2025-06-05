@@ -9,8 +9,8 @@ export default {
 			'users',
 			[
 				{
-					cpf: '12345678900',
-					name: 'João Silva',
+					cpf: '12345678906',
+					name: 'Gabriel Macedo',
 					email: 'joao.silva@example.com',
 					password: passwordHash,
 					created_at: new Date(),
