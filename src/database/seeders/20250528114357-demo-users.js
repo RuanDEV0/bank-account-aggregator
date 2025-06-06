@@ -52,7 +52,7 @@ export default {
 					cpf: '12345678909',
 					name: 'Renato Gaúcho',
 					email: 'conta9@teste.com',
-					passwordHash: passwordHash,
+					password: passwordHash,
 					created_at: new Date(),
 					updated_at: new Date(),
 				},
@@ -60,7 +60,7 @@ export default {
 					cpf: '12345678910',
 					name: 'Mazembe Mundial',
 					email: 'conta10@teste.com',
-					passwordHash: passwordHash,
+					password: passwordHash,
 					created_at: new Date(),
 					updated_at: new Date(),
 				}
