@@ -50,7 +50,7 @@ class OpenFinanceService {
 		});
 
 		return {
-			sucess: true,
+			success: true,
 			message: 'Compartilhamento feito com sucesso',
 			data: {
 				account: {
