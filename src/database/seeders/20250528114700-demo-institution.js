@@ -7,7 +7,7 @@ export default {
       {
         name: 'Santander',
         cnpj: '00000000000191',
-        image: 'https://example.com/banco-santander.png',
+        image: 'https://bank-account-aggregator.onrender.com/santander-logo.png',
         phone: '6130000000',
         email: 'contato@ss.com.br',
         created_at: new Date(),
