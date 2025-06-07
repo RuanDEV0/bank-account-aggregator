@@ -81,7 +81,7 @@ class OpenFinanceService {
 
 		console.log(balance);
 		return {
-			sucess: true,
+			success: true,
 			data: {
 				balance,
 			},
