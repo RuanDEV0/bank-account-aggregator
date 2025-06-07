@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 export default {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('consents', { 
+    await queryInterface.createTable('consents', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,

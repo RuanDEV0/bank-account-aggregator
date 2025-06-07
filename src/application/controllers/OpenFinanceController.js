@@ -4,13 +4,13 @@ import transactionOpenFinance from '../services/TransactionOpenFinanceService.js
 class OpenFinanceController {
 	async saveConsent(req, res) {
 		try {
-			const { cpf, expirationDate, expiration, authozation } = req.body;
+			const { cpf, expirationDate, expiration, authorization } = req.body;
 
 			const data = await OpenFinanceService.saveConsent({
 				cpf,
 				expirationDate,
 				expiration,
-				authozation,
+				authorization,
 			});
 			return res.status(200).json(data);
 		} catch (error) {
@@ -25,7 +25,7 @@ class OpenFinanceController {
 		try {
 			if (action === 'update') {
 				const { expirationDate, expiration, authorization } = req.body;
-				
+
 				const data = await OpenFinanceService.replaceConsent({
 					cpf,
 					expirationDate,
@@ -40,7 +40,7 @@ class OpenFinanceController {
 				const { authorization } = req.body;
 				const data = await OpenFinanceService.revokeConsent({ cpf, authorization});
 				return res.status(200).json(data);
-				
+
 			}
 		} catch (error) {
 			return res.status(400).json({ message: error.message });

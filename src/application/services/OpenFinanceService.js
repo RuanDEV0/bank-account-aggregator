@@ -7,7 +7,7 @@ import AccountValidate from '../validation/AccountValidate.js';
 import ConsentValidate from '../validation/ConsentValidate.js';
 
 class OpenFinanceService {
-	async saveConsent({ cpf, expirationDate: expiration_date, expiration, authozation }) {
+	async saveConsent({ cpf, expirationDate: expiration_date, expiration, authorization }) {
 		if (!(await UserValidate.userExistsByEmailOrCpf("",cpf))) {
 			throw new Error('not exists user');
 		}
@@ -37,7 +37,7 @@ class OpenFinanceService {
 			throw new Error('exists consent for this account')
 		}
 		await Consent.create({
-			authozation,
+			authorization,
 			expiration,
 			expiration_date,
 			account_id,
