@@ -45,7 +45,7 @@ class OpenFinanceService {
 
 		if(await ConsentValidate.existsConsent(account_id) && await ConsentValidate.isValid(account_id)){
 			return {
-				sucess: true,
+				success: true,
 				message: 'Compartilhamento feito com sucesso',
 				data: {
 					account: {
