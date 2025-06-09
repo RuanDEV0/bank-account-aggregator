@@ -33,10 +33,6 @@ class OpenFinanceService {
 			},
 		});
 
-		if(!(await ConsentValidate.existsConsent(account_id))){
-			throw new Error('not exists consent for this user');
-		}
-
 		if(await ConsentValidate.existsConsent(account_id) && !(await ConsentValidate.isValid(account_id))){
 			throw new Error('consent for this account is false')
 		}
