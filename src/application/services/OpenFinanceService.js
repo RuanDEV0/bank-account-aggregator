@@ -33,20 +33,39 @@ class OpenFinanceService {
 			},
 		});
 
-		if(await ConsentValidate.existsConsent(account_id)){
-			throw new Error('exists consent for this account')
+		if(!(await ConsentValidate.existsConsent(account_id))){
+			throw new Error('not exists consent for this user');
+		}
+
+		if(await ConsentValidate.existsConsent(account_id) && !(await ConsentValidate.isValid(account_id))){
+			throw new Error('consent for this account is false')
+		}
+
+		const { name, image } = await Institution.findOne({
+			where: {
+				id: institution_id,
+			},
+		});
+
+		if(await ConsentValidate.existsConsent(account_id) && await ConsentValidate.isValid(account_id)){
+			return {
+				sucess: true,
+				message: 'Compartilhamento feito com sucesso',
+				data: {
+					account: {
+						institutionName: name,
+						image,
+						account,
+						agency
+					}
+				}
+			}
 		}
 		await Consent.create({
 			authorization,
 			expiration,
 			expiration_date,
 			account_id,
-		});
-
-		const { name, image } = await Institution.findOne({
-			where: {
-				id: institution_id,
-			},
 		});
 
 		return {
