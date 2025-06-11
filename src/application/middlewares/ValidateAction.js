@@ -2,7 +2,7 @@ class ValidateAction{
     async checkAction(req, res, next){
         const { action } = req.params;
 
-        if(action === 'update' || action === 'revoked'){
+        if(action === 'update' || action === 'revoke'){
             return next();
         }
 

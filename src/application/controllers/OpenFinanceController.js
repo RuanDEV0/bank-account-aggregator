@@ -35,7 +35,7 @@ class OpenFinanceController {
 				return res.status(200).json(data);
 			}
 
-			if (action === 'revoked') {
+			if (action === 'revoke') {
 
 				const { authorization } = req.body;
 				const data = await OpenFinanceService.revokeConsent({ cpf, authorization});
