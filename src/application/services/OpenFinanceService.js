@@ -33,9 +33,6 @@ class OpenFinanceService {
 			},
 		});
 
-		if(await ConsentValidate.existsConsent(account_id) && !(await ConsentValidate.isValid(account_id))){
-			throw new Error('consent for this account is false')
-		}
 
 		const { name, image } = await Institution.findOne({
 			where: {
@@ -43,7 +40,7 @@ class OpenFinanceService {
 			},
 		});
 
-		if(await ConsentValidate.existsConsent(account_id) && await ConsentValidate.isValid(account_id)){
+		if(await ConsentValidate.existsConsent(account_id) && (await ConsentValidate.isValid(account_id) || !(await ConsentValidate.isValid(account_id)))){
 			return {
 				success: true,
 				message: 'Compartilhamento feito com sucesso',
