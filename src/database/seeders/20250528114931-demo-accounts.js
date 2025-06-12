@@ -16,7 +16,7 @@ export default {
       {
         number_account: '51529035',
         agency: '003',
-        balance: 3200.75,
+        balance: 870.75,
         user_id: 2,
         institution_id: 1,
         created_at: new Date(),
@@ -52,7 +52,7 @@ export default {
       {
         number_account: '20243165',
         agency: '003',
-        balance: 1000.0,
+        balance: 230.0,
         user_id: 6,
         institution_id: 1,
         created_at: new Date(),
@@ -69,7 +69,7 @@ export default {
       },{
         number_account: '03412343',
         agency: '003',
-        balance: 3000.00,
+        balance: 560.00,
         user_id: 8,
         institution_id: 1,
         created_at: new Date(),
@@ -87,7 +87,7 @@ export default {
       {
         number_account: '45630123',
         agency: '003',
-        balance: 3000.00,
+        balance: 4600.00,
         user_id: 10,
         institution_id: 1,
         created_at: new Date(),
