@@ -87,7 +87,47 @@ export default {
 					password: passwordHash,
 					created_at: new Date(),
 					updated_at: new Date(),
-				}
+				},
+				{
+					cpf: '12345678911',
+					name: 'Andrei Albrecht',
+					email: 'andreialbrecht@gmail.com',
+					password: passwordHash,
+					created_at: new Date(),
+					updated_at: new Date(),
+				},
+				{
+					cpf: '12345678912',
+					name: 'Alexandre Tonin',
+					email: 'xandetonin@gmail.com',
+					password: passwordHash,
+					created_at: new Date(),
+					updated_at: new Date(),
+				},
+				{
+					cpf: '12345678913',
+					name: 'Ruan Oliveira',
+					email: 'oliveiraruan2018@gmail.com',
+					password: passwordHash,
+					created_at: new Date(),
+					updated_at: new Date(),
+				},
+				{
+					cpf: '12345678914',
+					name: 'Marcos Schlick',
+					email: 'marcosschlick@gmail.com',
+					password: passwordHash,
+					created_at: new Date(),
+					updated_at: new Date(),
+				},
+				{
+					cpf: '12345678915',
+					name: 'Matheus Aguiar',
+					email: 'matheus.aguiar068@gmail.com',
+					password: passwordHash,
+					created_at: new Date(),
+					updated_at: new Date(),
+				},
 			],
 			{}
 		);
